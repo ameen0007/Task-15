@@ -148,9 +148,8 @@ export const ImageGallery = () => {
             )}
           </div>
         )}
-        {imageData && (
+        {imageData.length > 0 && 
         <div className="line"></div>
-        )
         }
         <Modal
           isOpen={isModalOpen}
