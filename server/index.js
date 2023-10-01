@@ -41,7 +41,9 @@ app.get("/images/api", (req, res) => {
   res.json({message : "hello"})
 });
 
-
+app.get("/" , (req,res)=>{
+  res.send("This page is not exist")
+})
 
 const PORT = 3000;
 app.listen(PORT, console.log(`server started in port ${PORT}`));
