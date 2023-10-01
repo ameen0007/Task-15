@@ -33,7 +33,7 @@ const uploading = multer({ storage: storage });
 app.post("/upload", uploading.single("image_file"), (req, res) => {
   images.push(req.file.filename);
   console.log(images, "image array");
-  res.json({ massage: "image uploaded" });
+  res.send("this is upload page")
 });
 
 app.get("/images/api", (req, res) => {
