@@ -23,14 +23,17 @@ const upload = multer({ storage: storage });
 
 app.post("/upload", upload.single("image_file"), (req, res) => {
   images.push(req.file.filename);
-
+  res.json({message : "hello"})
   console.log(images, "image array");
   res.json({ massage: "image uploaded" });
 });
 
 app.get("/images/api", (req, res) => {
   res.json(images);
+  res.json({message : "hello"})
 });
+
+
 
 const PORT = 3000;
 app.listen(PORT, console.log(`server started in port ${PORT}`));
