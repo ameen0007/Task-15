@@ -21,7 +21,7 @@ export const ImageGallery = () => {
   const fetchImages = async () => {
     try {
       const response = await axios.get("https://image-gallery-server.vercel.app/images/api");
-      // 
+    
       console.log(response.data, "data in images array");
       setImageData(response.data);
     } catch (error) {
@@ -44,7 +44,7 @@ export const ImageGallery = () => {
       
        method : "POST",
         headers : {
-          "Content-Type" : "multipart/form-data"
+          "Content-Type" : "multipart/form-data",
         },
         data : formData,
           onUploadProgress: (progressEvent) => {
