@@ -172,8 +172,8 @@ export const ImageGallery = () => {
         {imageData.map((data, index) => (
           <div key={index} className="image">
             <img
-              src={`http://localhost:3000/images/${data}`}
-              onClick={() => openModal(`http://localhost:3000/images/${data}`)}
+              src={`https://image-gallery-server.vercel.app/images/${data}`}
+              onClick={() => openModal(`https://image-gallery-server.vercel.app/images/${data}`)}
             />
           </div>
         ))}
