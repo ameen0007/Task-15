@@ -28,9 +28,9 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + "-" + uniqueSuffix + "." + extension);
   },
 });
-const upload = multer({ storage: storage });
+const uploading = multer({ storage: storage });
 
-app.post("/upload", upload.single("image_file"), (req, res) => {
+app.post("/upload", uploading.single("image_file"), (req, res) => {
   images.push(req.file.filename);
   console.log(images, "image array");
   res.json({ massage: "image uploaded" });
