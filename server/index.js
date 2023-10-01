@@ -3,11 +3,16 @@ const app = express();
 const cors = require("cors");
 const multer = require("multer");
 
-app.use(cors({
-  origin : ["https://gallery-nine-kohl.vercel.app/"],
+app.use(cors(
+  
+  {
+  origin : ["https://gallery-nine-kohl.vercel.app"],
       methods : ["GET","POST"],
       credentials : true
-}));
+}
+
+
+));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -27,7 +32,6 @@ const upload = multer({ storage: storage });
 
 app.post("/upload", upload.single("image_file"), (req, res) => {
   images.push(req.file.filename);
-  res.json({message : "hello"})
   console.log(images, "image array");
   res.json({ massage: "image uploaded" });
 });
