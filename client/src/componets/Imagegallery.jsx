@@ -50,7 +50,7 @@ export const ImageGallery = () => {
           onUploadProgress: (progressEvent) => {
             const progress = Math.round(
               (progressEvent.loaded / progressEvent.total) * 100
-            );
+            )
             setUploadProgress(progress);
           },
         }
@@ -148,8 +148,10 @@ export const ImageGallery = () => {
             )}
           </div>
         )}
+        {imageData && (
         <div className="line"></div>
-    
+        )
+        }
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
