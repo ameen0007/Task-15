@@ -6,7 +6,7 @@ const multer = require("multer");
 app.use(cors(
   
   {
-  origin : ["https://gallery-nine-kohl.vercel.app/"],
+  origin : ["https://gallery-nine-kohl.vercel.app"],
       methods : ["GET","POST"],
       credentials : true
 }
