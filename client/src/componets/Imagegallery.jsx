@@ -20,7 +20,7 @@ export const ImageGallery = () => {
 
   const fetchImages = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/images/api");
+      const response = await axios.get("https://image-gallery-server.vercel.app/images/api");
       console.log(response.data, "data in images array");
       setImageData(response.data);
     } catch (error) {
@@ -40,7 +40,7 @@ export const ImageGallery = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/upload",
+        "https://image-gallery-server.vercel.app/upload",
         formData,
         {
           onUploadProgress: (progressEvent) => {
