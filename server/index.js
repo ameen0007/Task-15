@@ -8,7 +8,7 @@ app.use(cors(
   {
   origin : ["https://gallery-nine-kohl.vercel.app"],
       methods : ["GET","POST"],
-      credentials : true
+      credentials : true,
 }
 
 
