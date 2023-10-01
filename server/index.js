@@ -3,7 +3,11 @@ const app = express();
 const cors = require("cors");
 const multer = require("multer");
 
-app.use(cors());
+app.use(cors({
+  origin : ["https://gallery-nine-kohl.vercel.app/"],
+      methods : ["GET","POST"],
+      credentials : true
+}));
 app.use(express.json());
 app.use(express.static("public"));
 
