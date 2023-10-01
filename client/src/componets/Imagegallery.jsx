@@ -39,10 +39,12 @@ export const ImageGallery = () => {
     formData.append("image_file", image);
 
     try {
-      const response = await axios.post(
-        "https://image-gallery-server.vercel.app/upload",
-        formData,
-        {
+      const response = await axios("https://image-gallery-server.vercel.app/upload",{
+       method : "POST",
+        headers : {
+          "Content-Type" : "multipart/form-data"
+        },
+        data : formData,
           onUploadProgress: (progressEvent) => {
             const progress = Math.round(
               (progressEvent.loaded / progressEvent.total) * 100
